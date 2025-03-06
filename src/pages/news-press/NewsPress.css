@@ -1,0 +1,17 @@
+$b: .news-press;
+
+$(b) {
+    @media (--mobile) {
+        padding-bottom: 60px;
+        padding-top: 20px;
+    }
+
+    @media (--desktop) {
+        padding-bottom: 80px;
+        padding-top: 50px;
+    }
+
+    &__subtitle {
+        margin-bottom: 30px;
+    }
+}

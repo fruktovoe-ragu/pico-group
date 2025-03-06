@@ -1,0 +1,15 @@
+.publication {
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    &__participants {
+        color: var(--paleLight);
+        margin-bottom: 5px;
+    }
+
+    &__title {
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+}

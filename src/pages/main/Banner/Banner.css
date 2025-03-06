@@ -1,0 +1,137 @@
+.banner {
+  position: relative;
+
+  &:before {
+    content: '';
+    background: var(--dark80);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 80%;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &:after {
+    content: '';
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(17, 19, 28, 1) 100%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 80%;
+    height: 50%;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &__media {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+
+    @media (--mobile) {
+      top: -50px;
+      padding-top: 50px;
+    }
+
+    @media (--desktop) {
+      padding-top: 70px;
+      top: -70px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+  }
+
+  &__content {
+    max-width: 700px;
+    position: relative;
+    top: -70px;
+    text-align: center;
+
+    @media (--mobileB) {
+      max-width: none;
+    }
+
+    @media (--mobile) {
+      top: -30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__paragraph {
+    @mixin bigText;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @media (--mobileB) {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 700px;
+    }
+  }
+
+  &__arrow-down {
+    animation: arrowMoving 1s linear infinite;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    position: absolute;
+    left: calc(50% - 25px);
+
+    width: 50px;
+    z-index: 10;
+
+    svg path {
+      stroke: var(--light);
+      transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+    }
+
+    @media (--mobile) {
+      bottom: 20px;
+    }
+
+    @media (--desktop) {
+      bottom: 50px;
+    }
+  }
+
+  &__arrow-down:hover {
+    svg path {
+      stroke: var(--blue);
+    }
+  }
+}
+
+@keyframes arrowMoving {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
