@@ -1,7 +1,6 @@
 $b: .latest-news;
 
 $(b) {
-  border-bottom: 1px solid var(--dark60);
   overflow: hidden;
 
   @media (--mobileSM) {
