@@ -1,3 +1,4 @@
+import React from 'react';
 export interface ICollaborations {
     text: string;
     list: IListItem[];

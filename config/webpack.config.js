@@ -170,6 +170,7 @@ module.exports = function (webpackEnv) {
           ]
         : paths.appIndexJs,
     output: {
+      hashFunction: 'sha512',
       // The build folder.
       path: isEnvProduction ? paths.appBuild : undefined,
       // Add /* filename */ comments to generated require()s in the output.

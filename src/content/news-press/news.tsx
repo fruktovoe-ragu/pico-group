@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface INewsYear {
   year: number;
   news: INews[];

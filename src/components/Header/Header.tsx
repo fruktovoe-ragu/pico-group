@@ -54,8 +54,7 @@ const Header: React.FC = () => {
 
   const renderMenuLink = (title: string, url: string) => (
     <NavLink
-      className={cn('link')}
-      activeClassName={cn('link', { active: true })}
+      className={({ isActive }) => cn('link', { active: isActive })}
       to={url}
     >
       <div className={cn('item')} onClick={handleLinkClick(false)}>
@@ -80,7 +79,9 @@ const Header: React.FC = () => {
         const isArrayEmpty = !!submenu.length;
         const isSelected = submenuIndex === index;
         const submenuUrls = submenu.map(({ url: submenuPath }) => `${url}${submenuPath}`);
-        const isSubmenuItemActive = Boolean(matchPath(location.pathname, submenuUrls));
+        const isSubmenuItemActive = submenuUrls.some((pattern) =>
+          matchPath({ path: pattern }, location.pathname)
+        );
         const shouldExpandActiveSubmenu = submenuIndex === -1;
         const isCollapseOpened = isSelected || (shouldExpandActiveSubmenu && isSubmenuItemActive);
 
@@ -98,7 +99,7 @@ const Header: React.FC = () => {
               {isMobileWide && submenu && (
                 <Collapse isOpened={isCollapseOpened}>
                   <div className={cn('submenu')}>
-                    <SideMenu menu={submenu} path={url} onClick={handleLinkClick(true)} />
+                    <SideMenu menu={submenu} onClick={handleLinkClick(true)} />
                   </div>
                 </Collapse>
               )}

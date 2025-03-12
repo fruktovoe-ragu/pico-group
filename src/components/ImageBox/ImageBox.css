@@ -1,6 +1,8 @@
 $b: .image-box;
 
 $(b) {
+    border-radius: 8px;
+    overflow: hidden;
     position: relative;
     width: 100%;
 

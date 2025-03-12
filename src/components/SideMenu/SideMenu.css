@@ -9,6 +9,7 @@ $(b)  {
 
   &__item {
     background-color: transparent;
+    border-radius: 4px;
     box-sizing: border-box;
     cursor: pointer;
     display: flex;
@@ -24,8 +25,20 @@ $(b)  {
       margin-bottom: 10px;
     }
 
-    &:hover, &_active {
+    &:hover {
       background-color: var(--dark70);
+    }
+
+    &_active {
+      background-color: var(--dark60);
+      cursor: default;
+
+      &:hover {
+        background-color: var(--dark60);
+      }
+    }
+
+    &:hover, &_active {
       color: var(--light);
 
       &:before {

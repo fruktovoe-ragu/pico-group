@@ -1,18 +1,16 @@
 :root {
     /* Layer */
     --dark80: #11131C;
-    /* Content */
-    --light: #E7E7E7;
     /* Hovered, onLayer */
-    --dark70: #1D1E2B;
-    /* FloatLayer */
-    --dark60: #252937;
-    /* Border */
-    --dark40: #3A3E4C;
+    --dark70: #1C202D;
+    /* FloatLayer, Selected */
+    --dark60: #2E3244;
     /* Pressed */
     --dark20: #B1B4BF;
-    /* Link */
-    --blue: #B39CFF;
+    /* Primary content */
+    --light: #E7E7E7;
     /* Secondary content */
     --paleLight: #9A9B9C;
+    /* Link */
+    --blue: #B39CFF;
 }

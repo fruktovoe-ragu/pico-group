@@ -10,6 +10,8 @@ interface IPopupProps {
     onClose: () => void;
 };
 
+Modal.setAppElement('#root');
+
 const cn = cnCreate('popup');
 const Popup: React.FC<IPopupProps> = ({
     isOpened,

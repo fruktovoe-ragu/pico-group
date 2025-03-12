@@ -1,0 +1,13 @@
+.publications-list {
+    &__year {
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--dark60);
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+        }
+    }
+
+    &__content-title {
+        margin-bottom: 20px;
+    }
+}

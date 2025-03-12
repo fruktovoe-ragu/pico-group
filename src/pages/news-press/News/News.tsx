@@ -1,14 +1,14 @@
 import React from 'react';
 import cnCreate from 'utils/cnCreate';
-import { useRouteMatch, NavLink } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 import ChipsPanel from 'components/ChipsPanel/ChipsPanel';
 import { newsData, INews } from 'content/news-press/news';
 import './News.css';
 
 const cn = cnCreate('news');
 const News: React.FC = () => {
-  const { path } = useRouteMatch();
-
+  const { pathname } = useLocation();
+console.log(pathname);
   const handleNavClick = () => {
     window.scrollTo(0, 0);
   };
@@ -22,7 +22,7 @@ const News: React.FC = () => {
             <p className={cn('date')}>{date}</p>
             <NavLink
               className={cn('title')}
-              to={`${path}/${id}`}
+              to={`${pathname}/${id}`}
               onClick={handleNavClick}
             >
               {title}

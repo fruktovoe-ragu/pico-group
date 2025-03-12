@@ -1,5 +1,5 @@
 .footer {
-  border-top: 1px solid var(--dark40);
+  border-top: 1px solid var(--dark60);
 
   &__inner {
     @media (--mobileSM) {

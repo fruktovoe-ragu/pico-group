@@ -1,11 +1,7 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import './GridColumn.css';
 import cnCreate from 'utils/cnCreate';
 
-const GridSizeValues = PropTypes.oneOf<TGridSizeValues>(
-    ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
-);
 export type TGridSizeValues = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
 
 export interface IGridColumn {
@@ -125,31 +121,5 @@ const GridColumn: React.FC<IGridColumn> = ({
         {children}
     </div>
 );
-
-GridColumn.propTypes = {
-    wide: GridSizeValues,
-    desktop: GridSizeValues,
-    tablet: GridSizeValues,
-    mobile: GridSizeValues,
-    all: GridSizeValues,
-
-    orderAll: PropTypes.string,
-    orderWide: PropTypes.string,
-    orderDesktop: PropTypes.string,
-    orderTablet: PropTypes.string,
-    orderMobile: PropTypes.string,
-
-    leftOffsetWide: GridSizeValues,
-    leftOffsetDesktop: GridSizeValues,
-    leftOffsetTablet: GridSizeValues,
-    leftOffsetMobile: GridSizeValues,
-    leftOffsetAll: GridSizeValues,
-
-    align: PropTypes.oneOf(['right', 'left', 'center']),
-    grow: PropTypes.bool,
-    flex: PropTypes.bool,
-    className: PropTypes.string,
-    children: PropTypes.node.isRequired,
-};
 
 export default GridColumn;

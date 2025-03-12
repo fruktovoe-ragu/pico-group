@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface IPress {
     year: number,
     releases: IRelease[],

@@ -13,15 +13,21 @@ const Person: React.FC<IPersonProps> = ({ data }) => {
 
   return (
     <div className={cn()}>
-      <div className={cn('image-box')}>
-          {image ?
-            <img src={image} className={cn('image')} alt="name" />
-            : <div className={cn('no-image')} />
-          }
-        </div>
+      {image !== undefined
+        ? <div className={cn('image-box')}>
+            {image.length !== 0 ?
+              <img src={image} className={cn('image')} alt="name" />
+              : <div className={cn('no-image')} />
+            }
+          </div>
+        : <></>
+      }
       <div className={cn('container')}>
         <div className={cn('name-box')}>
-          <h5 className={cn('name')}>{name}</h5>
+          <h5 className={cn('name', { "only-name": image === undefined })}>
+            {image === undefined && <span>· </span>}
+            {name}
+          </h5>
           {publications && (
             <a target="_blank" rel="noreferrer" href={publications} className={cn('publication')}>Research activity on{'\u00A0'}Pulbons.com</a>
           )}

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import './Grid.css';
 import cnCreate from 'utils/cnCreate';
 import { IGridColumn } from './GridColumn';
@@ -54,18 +53,5 @@ const Grid: React.FC<IGridProps> = ({
         </div>
     </div>
 );
-
-Grid.propTypes = {
-    hAlign: PropTypes.oneOf(['left', 'right', 'center', 'between', 'around']),
-    vAlign: PropTypes.oneOf(['top', 'bottom', 'center', 'baseline']),
-    guttersLeft: PropTypes.bool,
-    guttersBottom: PropTypes.bool,
-    multiRow: PropTypes.bool,
-    className: PropTypes.string,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element.isRequired),
-        PropTypes.element.isRequired,
-    ]).isRequired,
-};
 
 export default Grid;

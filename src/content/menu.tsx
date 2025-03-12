@@ -14,27 +14,27 @@ export const menu = [
         submenu: [
             {
                 title: 'Maxwell’s demon and stochastic thermodynamics',
-                url: '/maxwell’s-demon-and-stochastic-thermodynamics',
+                url: '/research/maxwell’s-demon-and-stochastic-thermodynamics',
             },
             {
                 title: 'Electronic cooling',
-                url: '/electronic-cooling',
+                url: '/research/electronic-cooling',
             },
             {
                 title: 'Electronic refrigeration',
-                url: '/electronic-refrigeration',
+                url: '/research/electronic-refrigeration',
             },
             {
                 title: 'Quantum heat engine',
-                url: '/quantum-heat-engine',
+                url: '/research/quantum-heat-engine',
             },
             {
                 title: 'Single-electron turnstile',
-                url: '/single-electron-turnstile',
+                url: '/research/single-electron-turnstile',
             },
             {
                 title: 'Temperature and thermometry',
-                url: '/temperature-and-thermometry',
+                url: '/research/temperature-and-thermometry',
             },
         ],
     },
@@ -44,19 +44,19 @@ export const menu = [
         submenu: [
             {
                 title: 'Senior Researchers',
-                url: '/senior-researchers',
+                url: '/team/senior-researchers',
             },
             {
                 title: 'Postdoctoral Researchers',
-                url: '/postdoctoral-researchers',
+                url: '/team/postdoctoral-researchers',
             },
             {
                 title: 'Ph.D. Students',
-                url: '/phd-students',
+                url: '/team/phd-students',
             },
             {
                 title: 'Former group members',
-                url: '/former-group-members',
+                url: '/team/former-group-members',
             },
         ],
     },
@@ -70,12 +70,12 @@ export const menu = [
         url: '/publications',
         submenu: [
             {
-                title: 'By year',
-                url: '/years',
+                title: 'Peer-reviewed works',
+                url: '/publications/peer-reviewed-works',
             },
             {
                 title: 'PhD Theses',
-                url: '/phd-theses',
+                url: '/publications/phd-theses',
             },
         ],
     },
@@ -85,11 +85,11 @@ export const menu = [
         submenu: [
             {
                 title: 'News',
-                url: '/news',
+                url: '/news-press/news',
             },
             {
                 title: 'Press releases',
-                url: '/press',
+                url: '/news-press/press',
             },
         ],
     },
