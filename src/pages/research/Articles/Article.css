@@ -52,11 +52,6 @@
     margin-top: 25px;
   }
 
-  &__note {
-    margin-bottom: 20px;
-    opacity: 60%;
-  }
-
   &__tooltip-trigger {
     color: var(--blue);
     cursor: pointer;
