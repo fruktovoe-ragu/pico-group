@@ -1,6 +1,7 @@
 import React from 'react';
 import cnCreate from 'utils/cnCreate';
-import { useLocation, NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import Tile from 'components/Tile/Tile';
 import ChipsPanel from 'components/ChipsPanel/ChipsPanel';
 import { newsData, INews } from 'content/news-press/news';
 import './News.css';
@@ -8,26 +9,19 @@ import './News.css';
 const cn = cnCreate('news');
 const News: React.FC = () => {
   const { pathname } = useLocation();
-console.log(pathname);
-  const handleNavClick = () => {
-    window.scrollTo(0, 0);
-  };
 
   const renderYear = (year: number, arr: INews[], i: number) => (
     <div className={cn('year')} key={i * year}>
       <h3 className={cn('title')}>{year}</h3>
       <div className={cn('releases')}>
         {arr.map(({ date, id, title }: INews, i: number) => (
-          <div className={cn('item')} key={i + date}>
-            <p className={cn('date')}>{date}</p>
-            <NavLink
-              className={cn('title')}
-              to={`${pathname}/${id}`}
-              onClick={handleNavClick}
-            >
-              {title}
-            </NavLink>
-          </div>
+          <Tile
+            key={i + date}
+            date={date}
+            title={title}
+            linkHref={`${pathname}/${id}`}
+            isSecondary
+          />
         ))}
       </div>
     </div>

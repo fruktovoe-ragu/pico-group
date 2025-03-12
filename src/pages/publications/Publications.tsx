@@ -14,7 +14,7 @@ const Publications: React.FC = () => {
   return (
     <div className={cn()}>
       <Body title={title} submenu={submenu}>
-        <h2 className={cn('subtitle')}>{subTitle?.title ?? ""}</h2>
+        {subTitle && <h2 className={cn('subtitle')}>{subTitle.title}</h2>}
         <Outlet />
       </Body>
     </div>

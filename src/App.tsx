@@ -55,6 +55,7 @@ const App: React.FC = () => {
         <div className={cn()}>
           <Header />
           <Routes>
+            <Route path={`${menu[4].submenu[0].url}/:id`} element={<Article />} />
             <Route path={menu[4].url} element={<NewsPress />}>
               <Route path="" element={<Navigate to={menu[4].submenu[0].url} />} />
               <Route path={menu[4].submenu[0].url} element={<News />} />

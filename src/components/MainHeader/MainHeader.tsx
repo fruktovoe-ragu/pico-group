@@ -15,7 +15,6 @@ export interface IMainHeaderProps {
 const cn = cnCreate('main-header');
 const MainHeader: React.FC<IMainHeaderProps> = ({ menu, title }) => {
   const { isMobileWide } = useAppContext();
-
   const [isCollapseOpened, setCollapseOpened] = useState(false);
 
   const handleMobileMenuClick = () => {

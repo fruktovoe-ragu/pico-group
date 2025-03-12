@@ -11,7 +11,8 @@ import './Body.css';
 
 export interface IBodyProps {
   submenu: ICommonMenu[];
-  title: string;
+  title?: string;
+  sideMenuReturnLink?: boolean;
   children: any;
 }
 
@@ -19,6 +20,7 @@ const cn = cnCreate('body');
 const Body: React.FC<IBodyProps> = ({
   title,
   submenu,
+  sideMenuReturnLink,
   children,
 }) => {
   const { isMobileWide } = useAppContext();
@@ -26,23 +28,24 @@ const Body: React.FC<IBodyProps> = ({
   return (
     <div className={cn()}>
       <ContentArea>
-        <Grid>
-          <GridColumn leftOffsetDesktop="3">
-            <MainHeader
-              menu={submenu}
-              title={title}
-            />
-          </GridColumn>
-        </Grid>
+        {title &&
+          <Grid>
+            <GridColumn leftOffsetDesktop="3">
+              <MainHeader
+                menu={submenu}
+                title={title}
+              />
+            </GridColumn>
+          </Grid>
+        }
         <Grid>
           {isMobileWide ? <></> : (
             <GridColumn desktop="3">
-              <SideMenu menu={submenu} />
+              <SideMenu menu={submenu} hasBackItems={sideMenuReturnLink} />
             </GridColumn>
           )}
           <GridColumn desktop="9" all="12">
             <div className={cn('inner')}>
-                {/* <h2 className={cn('subtitle')}>{submenu[0].title}</h2> */}
                 {children}
             </div>
           </GridColumn>

@@ -11,14 +11,9 @@
         margin-bottom: 20px;
     }
 
-    &__item {
-        &:not(:last-child) {
-            margin-bottom: 30px;
-        }
-    }
-
-    &__date {
-        color: var(--paleLight);
-        margin-bottom: 5px;
+    &__releases {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
 }

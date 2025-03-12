@@ -1,4 +1,6 @@
-.tile {
+$b: .tile;
+
+$(b) {
   height: 100%;
 
   &__link {
@@ -38,5 +40,16 @@
   &__title {
     @mixin bigText;
     position: relative;
+  }
+
+  &_secondary {
+    $(b)__link {
+      &:before {
+        height: calc(100% + 20px);
+        top: -10px;
+        left: -10px;
+        width: calc(100% + 20px);
+      }
+    }
   }
 }

@@ -7,11 +7,12 @@ import './SideMenu.css';
 
 export interface ISideMenuProps {
   menu: ICommonMenu[];
+  hasBackItems?: boolean;
   onClick?: () => void;
 }
 
 const cn = cnCreate('side-menu');
-const SideMenu: React.FC<ISideMenuProps> = ({ menu, onClick }) => {
+const SideMenu: React.FC<ISideMenuProps> = ({ menu, hasBackItems, onClick }) => {
   const { isMobileWide } = useAppContext();
 
   const handleNavClick = () => {
@@ -25,7 +26,7 @@ const SideMenu: React.FC<ISideMenuProps> = ({ menu, onClick }) => {
       <div className={cn('list')}>
           {menu.map(({ title, url }, index) => (
             <NavLink
-              className={({ isActive }) => cn('item', { active: isActive })}
+              className={({ isActive }) => cn('item', { active: isActive && !hasBackItems, back: hasBackItems })}
               key={title + index}
               to={url}
               onClick={handleNavClick}

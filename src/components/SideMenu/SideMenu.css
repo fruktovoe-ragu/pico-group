@@ -88,4 +88,22 @@ $(b)  {
       transform: translateX(0);
     }
   }
+
+  &__item_back {
+    justify-content: flex-start;
+    gap: 8px;
+
+    $(b)__text {
+      order: 2;
+    }
+
+    $(b)__icon-box {
+      transform: rotate(180deg);
+      order: 1;
+    }
+
+    $(b)__arrow-icon {
+      opacity: 1;
+    }
+  }
 }

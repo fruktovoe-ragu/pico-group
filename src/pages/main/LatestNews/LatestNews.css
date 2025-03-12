@@ -105,8 +105,8 @@ $(b) {
   }
 
   &__link {
-    @mixin smallText;
     display: flex;
     align-items: center;
+    text-decoration: none;
   }
 }

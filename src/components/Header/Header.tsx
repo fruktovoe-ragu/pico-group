@@ -11,19 +11,22 @@ import './Header.css';
 const cn = cnCreate('header');
 const Header: React.FC = () => {
   const { isMobileWide } = useAppContext();
-  const location = useLocation();
-
+  const { pathname } = useLocation();
   const [isMenuOpened, setMenuOpened] = useState(false);
   const [submenuIndex, setSubmenuIndex] = useState<number>(-1);
+
+  const scrollToTop = (speed: ScrollBehavior) => {
+    window.scrollTo({
+      top: 0,
+      behavior: speed,
+    });
+  };
 
   const handleLinkClick = (isSubLink: boolean) => () => {
     setMenuOpened(false);
     !isSubLink && setSubmenuIndex(-1);
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    scrollToTop("smooth");
   };
 
   const handleMobileMenuClick = () => {
@@ -34,6 +37,7 @@ const Header: React.FC = () => {
     }
 
     setMenuOpened(newIsOpen);
+    scrollToTop("instant");
   };
 
   const handleLogoClick = () => {
@@ -73,14 +77,14 @@ const Header: React.FC = () => {
     </div>
   );
 
-  const renderSubItemsList = () => (
+  const renderMobileList = () => (
     <div className={cn('list')}>
       {menu.map(({ title, url, submenu }, index) => {
         const isArrayEmpty = !!submenu.length;
         const isSelected = submenuIndex === index;
         const submenuUrls = submenu.map(({ url: submenuPath }) => `${url}${submenuPath}`);
         const isSubmenuItemActive = submenuUrls.some((pattern) =>
-          matchPath({ path: pattern }, location.pathname)
+          matchPath({ path: pattern }, pathname)
         );
         const shouldExpandActiveSubmenu = submenuIndex === -1;
         const isCollapseOpened = isSelected || (shouldExpandActiveSubmenu && isSubmenuItemActive);
@@ -127,7 +131,7 @@ const Header: React.FC = () => {
           <div className={cn('mobile-menu')}>
             <ContentArea>
               <div className={cn('mobile-menu-inner')}>
-                {renderSubItemsList()}
+                {renderMobileList()}
               </div>
             </ContentArea>
           </div>

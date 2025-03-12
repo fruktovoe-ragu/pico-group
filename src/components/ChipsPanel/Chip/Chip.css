@@ -32,5 +32,6 @@
         background-color: var(--light);
         border: 1px solid var(--light);
         color: var(--dark80);
+        cursor: default;
     }
 }

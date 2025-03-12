@@ -5,14 +5,14 @@ $(b) {
   width: 100%;
 
   &__back {
-    @mixin smallText;
+    /* @mixin smallText; */
     cursor: pointer;
     display: flex;
     align-items: center;
     text-decoration: none;
 
     @media (--mobile) {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     @media (--desktop) {
@@ -46,39 +46,41 @@ $(b) {
     margin-bottom: 20px;
   }
 
-  p {
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
-
-    & + & {
-      margin-top: 10px;
-    }
-  }
-
-  li {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
+  &__content {
     p {
-      margin-bottom: 5px;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
 
       & + & {
-        margin-top: 5px;
+        margin-top: 10px;
       }
     }
-  }
 
-  p + iframe {
-    margin-top: 15px;
-  }
+    li {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+      p {
+        margin-bottom: 5px;
 
-  iframe {
-    border: none;
-    margin-bottom: 25px;
-  }
+        & + & {
+          margin-top: 5px;
+        }
+      }
+    }
 
-  blockquote {
-    font-style: italic;
+    p + iframe {
+      margin-top: 15px;
+    }
+
+    iframe {
+      border: none;
+      margin-bottom: 25px;
+    }
+
+    blockquote {
+      font-style: italic;
+    }
   }
 }

@@ -159,6 +159,7 @@ $(b) {
   &__mobile-menu {
     border-top: 1px solid var(--dark60);
     height: calc(100vh - 50px);
+    overflow-y: scroll;
   }
 
   &__mobile-menu-inner {
