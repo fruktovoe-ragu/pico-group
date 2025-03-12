@@ -25,7 +25,8 @@ const Banner: React.FC = () => {
       <video className={cn('media')} autoPlay loop muted>
         <source src={Animation} type="video/mp4" />
       </video>
-      {/* <div className={cn('image')} style={{ backgroundImage: `url('${Picture}')` }} /> */}
+      <div className={cn('overlay')} />
+      <div className={cn('overlay', { gradient: true })} />
       <ContentArea className={cn('inner')}>
         <div className={cn('content')}>
           <h1 className={cn('title')}>Quantum phenomena and{'\u00A0'}devices</h1>
