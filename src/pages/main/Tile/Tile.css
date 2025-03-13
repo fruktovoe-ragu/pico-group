@@ -51,5 +51,13 @@ $(b) {
         width: calc(100% + 20px);
       }
     }
+
+    $(b)__title {
+      @mixin p;
+    }
+
+    $(b)__date {
+      margin-bottom: 5px;
+    }
   }
 }

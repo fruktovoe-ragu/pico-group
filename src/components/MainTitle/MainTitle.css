@@ -1,4 +1,4 @@
-.main-header {
+.main-title {
   @media (--mobile) {
     border-bottom: 1px solid var(--paleLight);
     margin-bottom: 20px;
@@ -8,7 +8,7 @@
     margin-bottom: 10px;
   }
 
-  &__title-container {
+  &__container {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -30,7 +30,7 @@
     transform: rotate(180deg);
   }
 
-  h1&__title {
+  h1&__content {
     @mixin h1-custom;
 
     @media (--mobile) {

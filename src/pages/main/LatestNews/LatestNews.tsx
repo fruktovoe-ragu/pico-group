@@ -4,7 +4,7 @@ import useAppContext from 'hooks/useAppContext';
 import Grid from 'components/Grid/Grid';
 import GridColumn from 'components/Grid/GridColumn';
 import ContentArea from 'components/ContentArea/ContentArea';
-import Tile from 'components/Tile/Tile';
+import Tile from 'pages/main/Tile/Tile';
 import { newsData, INews } from 'content/news-press/news';
 import './LatestNews.css';
 

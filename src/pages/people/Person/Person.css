@@ -40,6 +40,9 @@
     }
 
     &__image-box {
+        border-radius: 4px;
+        overflow: hidden;
+
         @media (--mobile) {
             margin-right: 25px;
             min-width: 290px;
@@ -54,6 +57,7 @@
     }
 
     &__image {
+        border-radius: 4px;
         width: 100%;
     }
 
@@ -65,30 +69,32 @@
     }
 
     &__container {
+        display: flex;
+
         @media (--desktop) {
-            display: flex;
             flex-grow: 1;
+            gap: 30px;
+        }
+        @media (--mobile) {
+            flex-direction: column;
+            gap: 15px;
         }
     }
 
     &__name-box {
         flex-grow: 1;
-        padding-bottom: 15px;
-
-        @media (--mobileBU) {
-            padding-right: 30px;
-        }
     }
 
     &__name {
         @mixin h5;
 
-        &_only-name {
-            font-weight: 500;
-        }
-
         @media (--mobile) {
             margin-top: 15px;
+        }
+
+        &_only-name {
+            font-weight: 500;
+            margin-top: 0;
         }
     }
 

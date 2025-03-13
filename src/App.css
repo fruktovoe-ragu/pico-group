@@ -1,5 +1,5 @@
 .layout-default {
-    overflow: hidden;
+    /* overflow: hidden; will break sticky menu */
 
     @media (--mobile) {
         padding-top: 50px;

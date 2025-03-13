@@ -10,11 +10,11 @@ const Research: React.FC = () => {
   const { title, submenu } = menu[0];
   const { pathname } = useLocation();
   const subTitle = submenu.find((section) => section.url === pathname);
-console.log(pathname);
+
   return (
     <div className={cn()}>
       <Body title={title} submenu={submenu}>
-        <h2 className={cn('subtitle')}>{subTitle?.title ?? ""}</h2>
+        {subTitle && <h2 className={cn('subtitle')}>{subTitle.title}</h2>}
         <Outlet />
       </Body>
     </div>

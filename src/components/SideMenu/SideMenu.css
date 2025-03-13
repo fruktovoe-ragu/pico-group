@@ -1,10 +1,11 @@
 $b: .side-menu;
 
-$(b)  {
+$(b) {
   @media (--desktop) {
     padding-bottom: 80px;
+    padding-top: 84px;
     position: sticky;
-    top: 135px;
+    top: 0;
   }
 
   &__item {

@@ -5,7 +5,7 @@ import SideMenu from 'components/SideMenu/SideMenu';
 import Grid from 'components/Grid/Grid';
 import GridColumn from 'components/Grid/GridColumn';
 import ContentArea from 'components/ContentArea/ContentArea';
-import MainHeader from 'components/MainHeader/MainHeader';
+import MainHeader from 'components/MainTitle/MainTitle';
 import { ICommonMenu } from 'content/menu';
 import './Body.css';
 
@@ -28,16 +28,6 @@ const Body: React.FC<IBodyProps> = ({
   return (
     <div className={cn()}>
       <ContentArea>
-        {title &&
-          <Grid>
-            <GridColumn leftOffsetDesktop="3">
-              <MainHeader
-                menu={submenu}
-                title={title}
-              />
-            </GridColumn>
-          </Grid>
-        }
         <Grid>
           {isMobileWide ? <></> : (
             <GridColumn desktop="3">
@@ -45,6 +35,12 @@ const Body: React.FC<IBodyProps> = ({
             </GridColumn>
           )}
           <GridColumn desktop="9" all="12">
+            {title &&
+              <MainHeader
+                menu={submenu}
+                title={title}
+              />
+            }
             <div className={cn('inner')}>
                 {children}
             </div>

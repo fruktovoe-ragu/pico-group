@@ -14,7 +14,7 @@ export const menu = [
         submenu: [
             {
                 title: 'Maxwell’s demon and stochastic thermodynamics',
-                url: '/research/maxwell’s-demon-and-stochastic-thermodynamics',
+                url: '/research/maxwell-demon-and-stochastic-thermodynamics',
             },
             {
                 title: 'Electronic cooling',

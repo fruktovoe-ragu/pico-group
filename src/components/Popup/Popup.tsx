@@ -1,11 +1,12 @@
 import React from 'react';
-import cnCreate from 'utils/cnCreate';
-import './Popup.css';
 import Modal from 'react-modal';
+import cnCreate from 'utils/cnCreate';
+import ContentArea from 'components/ContentArea/ContentArea';
+import './Popup.css';
 
 interface IPopupProps {
     isOpened: boolean;
-    isCloseButton?: boolean;
+    hasCloseButton?: boolean;
     isFullScreenMode?: boolean;
     onClose: () => void;
 };
@@ -14,27 +15,26 @@ Modal.setAppElement('#root');
 
 const cn = cnCreate('popup');
 const Popup: React.FC<IPopupProps> = ({
-    isOpened,
-    isCloseButton = true,
-    isFullScreenMode,
+    isOpened = false,
+    hasCloseButton = true,
     onClose,
     children,
 }) => {
     const renderCloseButton = (): JSX.Element => (
         <div className={cn('close')} onClick={onClose}>
-            <svg width="30" height="30" viewBox="0 0 30 30" className={cn('close-icon')}>
-                <path d="M26 4L4 26" stroke="#E7E7E7" strokeWidth="2" stroke-linecap="round" strokeLinejoin="round"/>
-                <path d="M4 4L26 26" stroke="#E7E7E7" strokeWidth="2" stroke-linecap="round" strokeLinejoin="round"/>
+            <svg width="20" height="20" viewBox="0 0 30 30" className={cn('close-icon')}>
+                <path d="M26 4L4 26" stroke="#E7E7E7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M4 4L26 26" stroke="#E7E7E7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
         </div>
     );
 
     return (
         <Modal
-            className={cn('content')}
+            className={cn('inner')}
             portalClassName={cn({
                 opened: isOpened,
-                full: isFullScreenMode,
+                full: true,
             })}
             overlayClassName={cn('overlay')}
             bodyOpenClassName="popup-open"
@@ -43,15 +43,15 @@ const Popup: React.FC<IPopupProps> = ({
             ariaHideApp={false}
             contentLabel="screen"
         >
-            <>
-                <div className={cn('tile')}>
-                    {isCloseButton && renderCloseButton()}
+            <ContentArea>
+                <div className={cn('container')}>
+                    {hasCloseButton && renderCloseButton()}
                     <div className={cn('wrap')}>
                         {children}
                     </div>
                 </div>
-                <div className={cn('background')} onClick={onClose} />
-            </>
+            </ContentArea>
+            <div className={cn('background')} onClick={onClose} />
         </Modal>
     );
 };

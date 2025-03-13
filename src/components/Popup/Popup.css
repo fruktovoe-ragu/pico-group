@@ -23,7 +23,7 @@ $(b) {
         z-index: 9999;
     }
 
-    &__content {
+    &__inner {
         background-color: var(--dark80);
         outline: none;
         position: absolute;
@@ -32,11 +32,13 @@ $(b) {
         z-index: 1001;
     }
 
-    &__tile {
+    &__container {
         position: relative;
         z-index: 1001;
         height: 100%;
         width: 100%;
+        padding-top: 70px;
+        padding-bottom: 70px;
     }
 
     &__wrap {
@@ -55,20 +57,23 @@ $(b) {
     }
 
     &__close {
+        background-color: transparent;
+        border-radius: 4px;
         box-sizing: border-box;
         cursor: pointer;
         position: absolute;
         top: 20px;
-        right: 10px;
+        right: 0;
         padding: 10px;
-
+        transition: background-color 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
         z-index: 5;
 
         &:hover {
-            $(b)__close-icon {
-                fill: #337ab7;
-                transform: scale(1.1);
-            }
+            background-color: var(--dark70);
+        }
+
+        &:active {
+            background-color: var(--dark60);
         }
     }
 
@@ -76,15 +81,12 @@ $(b) {
         appearance: none;
         display: block;
         fill: var(--light);
-        filter: drop-shadow(0 2px 2px #1a1a1a);
-        height: 40px;
-        transform: scale(1);
-        transition: fill 0.3s ease-out;
-        width: 40px;
+        height: 20px;
+        width: 20px;
     }
 
     &_opened {
-        $(b)__content {
+        $(b)__inner {
             position: relative;
             visibility: visible;
         }
@@ -99,7 +101,7 @@ $(b) {
             padding: 0;
         }
 
-        $(b)__content {
+        $(b)__inner {
             min-height: 100%;
             width: 100%;
         }
