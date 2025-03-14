@@ -1,6 +1,6 @@
 import React from 'react';
 import cnCreate from 'utils/cnCreate';
-import Picture from './i/Micronova.jpg';
+import Picture from './i/Micronova.png';
 import ImageBox from 'components/ImageBox/ImageBox';
 import Grid from 'components/Grid/Grid';
 import GridColumn from 'components/Grid/GridColumn';

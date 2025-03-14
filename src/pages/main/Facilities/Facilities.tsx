@@ -4,8 +4,8 @@ import Grid from 'components/Grid/Grid';
 import GridColumn from 'components/Grid/GridColumn';
 import ContentArea from 'components/ContentArea/ContentArea';
 import ImageBox from 'components/ImageBox/ImageBox';
-import Image1 from "./i/Pico-ryhma_69s.jpg";
-import Image2 from "./i/Photo_666.jpg";
+import Image1 from "./i/Pico-ryhma_69s.png";
+import Image2 from "./i/Photo_666.png";
 import './Facilities.css';
 
 const cn = cnCreate('facilities');

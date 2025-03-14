@@ -1,6 +1,6 @@
 import React from 'react';
 import cnCreate from 'utils/cnCreate';
-import Picture from './i/Team.jpg';
+import Picture from './i/Team.png';
 import ContentArea from 'components/ContentArea/ContentArea';
 import Grid from 'components/Grid/Grid';
 import GridColumn from 'components/Grid/GridColumn';
