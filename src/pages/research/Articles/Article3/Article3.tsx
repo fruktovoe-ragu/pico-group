@@ -20,6 +20,7 @@ const Article1: React.FC = () => {
             image={Image1}
             imgAlt="Scheme 1"
             footnoteText="Fig 1: Quantized thermal conductance measured: electron thermalization in metals weakens when lowering the temperature and is finally determined by radiative heat exchange with the environment. Our experiment demonstrates that the electronic temperature in a small metallic island increases when the connection to the cold environment is disrupted (red arrows). Moreover, it confirms (right) that the radiative heat flow is limited by the universal quantum of thermal conductance."
+            hasFullViewPopup
           />
 
           <p className={cn('paragraph')}>We have studied the interplay between Coulomb effects and electronic cooling. Several new devices were proposed by us: a radio-frequency single-electron refrigerator was described, in which heat is removed by an alternating voltage at the gate, without applying external bias voltage. A DC version of this, a heat transistor, was measured and successfully characterized. A Brownian refrigerator, where, somewhat surprisingly, heat is removed by subjecting a tunnel junction to the thermal noise of a resistor was proposed and characterized.</p>
@@ -28,6 +29,7 @@ const Article1: React.FC = () => {
             image={Image2}
             imgAlt="Scheme 2"
             footnoteText="Fig 2: Single-electron refrigerator. There’s no room for milk and eggs but this new single-electron refrigerator might get as cold as 10 mK."
+            hasFullViewPopup
           />
           <p className={cn('paragraph')}>We also try to achieve still lower temperatures by using superconductors with lower critical temperature than that of the commonly used aluminium. Thermometry at the low end of the temperature range achieved by the microrefrigerators is problematic, because no calibration can typically be reliably extrapolated into this regime: Coulomb blockade is the prime candidate to provide a way to determine temperatures in this regime.</p>
           <p className={cn('paragraph')}>One more line in this project is to find ways to create far from equilibrium electron energy distributions for fundamental studies but also to exploit them in refrigerator-controlled cold electron transistors.</p>
@@ -40,6 +42,7 @@ const Article1: React.FC = () => {
             image={Image3}
             imgAlt="Scheme 3"
             footnoteText="Fig 3: The measurement of cooling at the quantum limit. Top left: the sample with two resistors separated by a distance of 50 ?m enclosed in a superconducting loop. Bottom left: a close-up of one of the normal metal resistors with attached electrodes. Right: experimental data of NIS electronic cooling of the island directly connected to the refrigerator (blue line) and of the remote island (red line). Remote cooling persists down to the lowest temperatures indicating electromagnetic energy exchange between the resistors."
+            hasFullViewPopup
           />
         </div>
         <div className={cn('section')}>
@@ -50,6 +53,7 @@ const Article1: React.FC = () => {
             image={Image4}
             imgAlt="Scheme 4"
             footnoteText="Fig 4: Hysteresis of a proximity SNS Josephson junction. Bottom panel shows the current-voltage characteristics, and the top one the associated temperature of the N part. Hysteresis is of thermal origin."
+            hasFullViewPopup
           />
           <p className={cn('paragraph')}>In another experiment we demonstrated experimentally the manipulation of supercurrent in Al-AlOx-Ti Josephson tunnel junctions by injecting quasiparticles in a Ti island from two additional tunnel-coupled Al superconducting reservoirs. Both supercurrent enhancement and quenching with respect to equilibrium were achieved. We demonstrated cooling of the Ti line by quasiparticle injection from the normal state deep into the superconducting phase.</p>
         </div>

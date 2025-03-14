@@ -13,7 +13,11 @@ const About: React.FC = () => (
     <ContentArea>
       <Grid vAlign="center">
         <GridColumn desktop="7">
-        <ImageBox image={Picture} imgAlt="Pico-group in March 2020. From the left: Rishabh Upadhyay, George Thomas, Olivier Maillet, Florian Blanchet, Dmitry Golubev, Marco Marin Suarez, Joonas Peltonen, Bayan Karimi, Jukka Pekola, Yu-Cheng Chang, Elsa Mannila, Azat Gubaydullin, Elena Egorova, Diego Subero, Danial Majidi." />
+        <ImageBox
+          image={Picture}
+          imgAlt="Pico-group in March 2020. From the left: Rishabh Upadhyay, George Thomas, Olivier Maillet, Florian Blanchet, Dmitry Golubev, Marco Marin Suarez, Joonas Peltonen, Bayan Karimi, Jukka Pekola, Yu-Cheng Chang, Elsa Mannila, Azat Gubaydullin, Elena Egorova, Diego Subero, Danial Majidi."
+          hasFullWidth
+        />
         </GridColumn>
         <GridColumn desktop="5">
           <div className={cn('content')}>

@@ -35,7 +35,7 @@ const Infrastructure: React.FC = () => {
             </div>
           </GridColumn>
           <GridColumn desktop="9" all="12">
-            <ImageBox image={Picture} imgAlt='Micronova' />
+            <ImageBox image={Picture} imgAlt='Micronova' hasFullWidth />
           </GridColumn>
         </Grid>
       </ContentArea>

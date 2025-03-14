@@ -26,13 +26,13 @@ const Facilities: React.FC = () => (
               </div>
             </GridColumn>
             <GridColumn all="6" mobile="12" tablet="12">
-              <ImageBox image={Image1} imgAlt="Machine" />
+              <ImageBox image={Image1} imgAlt="Machine" hasFullWidth />
             </GridColumn>
           </Grid>
         </div>
         <Grid vAlign="center">
           <GridColumn all="6" mobile="12" tablet="12" className={cn('column', { order: '2' })}>
-            <ImageBox image={Image2} imgAlt="Two of our dilution refrigerators in the fourth floor lab." />
+            <ImageBox image={Image2} imgAlt="Two of our dilution refrigerators in the fourth floor lab." hasFullWidth />
           </GridColumn>
           <GridColumn all="6" mobile="12" tablet="12" className={cn('column', { order: '1', 'no-padding': true })}>
             <h3 className={cn('subtitle')}>

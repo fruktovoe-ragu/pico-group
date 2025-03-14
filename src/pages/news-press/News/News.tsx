@@ -1,7 +1,7 @@
 import React from 'react';
 import cnCreate from 'utils/cnCreate';
 import { useLocation } from 'react-router-dom';
-import Tile from 'pages/main/Tile/Tile';
+import Tile from 'components/Tile/Tile';
 import ChipsPanel from 'components/ChipsPanel/ChipsPanel';
 import { newsData, INews } from 'content/news-press/news';
 import './News.css';

@@ -11,6 +11,7 @@ $(b) {
 
     &:before {
       background-color: var(--dark70);
+      border-radius: 8px;
       content: '';
       height: calc(100% + 40px);
       opacity: 0;

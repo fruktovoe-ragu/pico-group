@@ -26,7 +26,6 @@ const Gallery: React.FC = () => {
                     classes={{image: cn('image')}}
                     image={original}
                     footnoteText={description}
-                    isFootnoteCollapsed
                   />
                 </div>
               ))}

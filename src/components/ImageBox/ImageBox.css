@@ -72,6 +72,7 @@ $(b) {
 
     &__footnote-collapsed {
         background-color: var(--dark70);
+        cursor: pointer;
         width: 100%;
 
         @media (--mobile) {
@@ -106,5 +107,9 @@ $(b) {
                 opacity: 0;
             }
         }
+    }
+
+    &_full-width {
+        width: 100%;
     }
 }

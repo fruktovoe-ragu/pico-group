@@ -20,6 +20,7 @@ const Article1: React.FC = () => {
             image={Image1}
             imgAlt="Scheme 1"
             footnoteText="Fig 1: Current plateaus at I = nef of a hybrid single-electron turnstile measured at f = 20 MHz."
+            hasFullViewPopup
           />
         </div>
       </div>
