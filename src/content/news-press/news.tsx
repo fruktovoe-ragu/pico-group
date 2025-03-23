@@ -1,7 +1,8 @@
 import React from 'react';
 
 export interface INewsYear {
-  year: number;
+  year: string;
+  id: number;
   news: INews[];
 };
 
@@ -15,7 +16,8 @@ export interface INews {
 
 export const newsData = [
   {
-    year: 2020,
+    year: '2020',
+    id: 5020,
     news: [
       {
         date: '21.08.2020',
@@ -48,7 +50,8 @@ export const newsData = [
     ],
   },
   {
-    year: 2017,
+    year: '2017',
+    id: 5017,
     news: [
       {
         date: '20.03.2017',
@@ -65,7 +68,8 @@ export const newsData = [
     ],
   },
   {
-    year: 2016,
+    year: '2016',
+    id: 5016,
     news: [
       {
         date: '19.12.2016',
@@ -82,7 +86,8 @@ export const newsData = [
     ],
   },
   {
-    year: 2015,
+    year: '2015',
+    id: 5015,
     news: [
       {
         date: '09.02.2015',
@@ -112,7 +117,8 @@ export const newsData = [
     ],
   },
   {
-    year: 2014,
+    year: '2014',
+    id: 5014,
     news: [
       {
         date: '19.12.2014',
@@ -140,7 +146,8 @@ export const newsData = [
     ],
   },
   {
-    year: 2013,
+    year: '2013',
+    id: 5013,
     news: [
       {
         date: '02.07.2013',

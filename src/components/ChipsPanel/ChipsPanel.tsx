@@ -6,63 +6,75 @@ import './ChipsPanel.css';
 
 const MOBILE_DISPLAYED_CHIP_NUMBER = 7;
 
-interface IContent {
-    title: number | string;
+export interface IContent {
+    title: string;
+    categoryId: number;
     content: JSX.Element | JSX.Element[];
-}
+};
 
 export interface IChipsPanelProps {
     className?: string | string[];
     data: IContent[];
-}
+    itemsMobileDisplayNumber?: number;
+};
 
 const cn = cnCreate('chips-panel');
 const ChipsPanel: React.FC<IChipsPanelProps> = ({
     className = '',
     data,
+    itemsMobileDisplayNumber = MOBILE_DISPLAYED_CHIP_NUMBER,
 }) => {
     const { isMobile } = useAppContext();
-    const [chosenChip, setChosenChip] = useState(0);
-    const mobileDisplayedChipData = data.slice(0, MOBILE_DISPLAYED_CHIP_NUMBER - 1);
-    const mobileWrappedChipData = data.slice(MOBILE_DISPLAYED_CHIP_NUMBER - 1);
 
-    const handleChipClick = (i: number) => () => {
+    const [chosenChip, setChosenChip] = useState(data[0].categoryId);
+
+    const mobileDisplayedChipData = data.slice(0, itemsMobileDisplayNumber - 1);
+    const mobileWrappedChipData = data.slice(itemsMobileDisplayNumber - 1);
+    const currentDataDisplayed = data.find(({ categoryId }) => chosenChip === categoryId);
+    const isOneOfMobileWrapped = mobileWrappedChipData.find(({ categoryId }) => categoryId === chosenChip);
+    const mobileLastItemLabel =
+        !!isOneOfMobileWrapped && !!currentDataDisplayed ? currentDataDisplayed.title : 'Earlier';
+
+    const handleChipClick = (i: number) => {
         setChosenChip(i);
     };
 
     const renderDesktopRow = () => (
-        data.map(({ title }, i) => (
+        data.map(({ title, categoryId }) => (
             <Chip
-                key={`${title} + ${i}`}
+                key={categoryId}
+                id={categoryId}
+                label={title}
                 className={cn('chip')}
-                onClick={handleChipClick(i)}
-                isChosen={chosenChip === i}
-            >
-                {title}
-            </Chip>
+                onClick={handleChipClick}
+                isChosen={chosenChip === categoryId}
+            />
         ))
     );
 
     const renderMobileRow = () => (
         <>
-            {mobileDisplayedChipData.map(({ title }, i) => (
+            {mobileDisplayedChipData.map(({ title, categoryId }) => (
                 <Chip
-                    key={`${title} + ${i}`}
+                    key={categoryId}
+                    id={categoryId}
+                    label={title}
                     className={cn('chip')}
-                    onClick={handleChipClick(i)}
-                    isChosen={chosenChip === i}
-                >
-                    {title}
-                </Chip>
+                    onClick={handleChipClick}
+                    isChosen={chosenChip === categoryId}
+                />
             ))}
-            <Chip
-                data={mobileWrappedChipData}
-                className={cn('chip')}
-                onClick={handleChipClick(MOBILE_DISPLAYED_CHIP_NUMBER)}
-                isChosen={chosenChip === MOBILE_DISPLAYED_CHIP_NUMBER}
-            >
-                Earlier
-            </Chip>
+            {!!mobileWrappedChipData.length &&
+                <Chip
+                    label={mobileLastItemLabel}
+                    id={chosenChip}
+                    className={cn('chip')}
+                    data={mobileWrappedChipData}
+                    hasSelect={!!mobileWrappedChipData.length}
+                    isChosen={!!isOneOfMobileWrapped}
+                    onClick={handleChipClick}
+                />
+            }
         </>
     );
 
@@ -74,7 +86,7 @@ const ChipsPanel: React.FC<IChipsPanelProps> = ({
                 </div>
             </div>
             <div className={cn('content')}>
-                {data[chosenChip].content}
+                {currentDataDisplayed?.content}
             </div>
         </div>
     );

@@ -22,14 +22,16 @@ const PublicationsList: React.FC<IPublicationsListProps> = ({ publications }) =>
     </div>
   );
 
-  const peerReviewedWorkChipsData = years.map(({ year, list }, i) => ({
+  const peerReviewedWorkChipsData = years.map(({ year, list, id }) => ({
     title: year,
-    content: renderPublications(year, list, i)
+    categoryId: id,
+    content: renderPublications(year, list, id),
   }));
 
   const peerReviewedWorkChipsDataWithAllYears = [{
     title: 'All years',
-    content: years.map(({ year, list }, i) => renderPublications(year, list, i))
+    categoryId: -1,
+    content: years.map(({ year, list, id }) => renderPublications(year, list, id)),
   }, ...peerReviewedWorkChipsData];
 
   return (

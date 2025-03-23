@@ -4,6 +4,7 @@ export interface IPublicationYears {
 }
 export interface IYear {
     year: string,
+    id: number
     list: IPublicationsList[],
 };
 
@@ -24,6 +25,7 @@ export const publications = [
         years: [
             {
                 year: '2021',
+                id: 2021,
                 list: [
                     {
                         participants: 'Matti Tomi, Mikhail R. Samatov, Andrey S. Vasenko, Antti Laitinen, Pertti Hakonen, Dmitry S. Golubev',
@@ -121,6 +123,7 @@ export const publications = [
             },
             {
                 year: '2020',
+                id: 2020,
                 list: [
                     {
                         participants: 'Jukka P. Pekola, Bayan Karimi',
@@ -314,6 +317,7 @@ export const publications = [
             },
             {
                 year: '2019',
+                id: 2019,
                 list: [
                     {
                         participants: 'L. B. Wang, D. S. Golubev, Y. M. Galperin, J. P. Pekola',
@@ -611,6 +615,7 @@ export const publications = [
             },
             {
                 year: '2018',
+                id: 2018,
                 list: [
                     {
                         participants: 'Bayan Karimi and Jukka Pekola',
@@ -802,6 +807,7 @@ export const publications = [
             },
             {
                 year: '2017',
+                id: 2017,
                 list: [
                     {
                         participants: 'S. Charpentier, L. Galletti, G. Kunakova, R. Arpaia, Y. Song, R. Baghdadi, S.M. Wang, A. Kalaboukhov, E. Olsson, F. Tafuri, D. Golubev, J. Linder, T. Bauch, F. Lombardi',
@@ -1115,6 +1121,7 @@ export const publications = [
             },
             {
                 year: '2016',
+                id: 2016,
                 list: [
                     {
                         participants: 'I. M. Khaymovich, J. P. Pekola, and A. S. Mel’nikov',
@@ -1394,6 +1401,7 @@ export const publications = [
             },
             {
                 year: '2015',
+                id: 2015,
                 list: [
                     {
                         participants: 'J. T. Peltonen, V. F. Maisi, S. Singh, E. Mannila, J. P. Pekola',
@@ -1753,6 +1761,7 @@ export const publications = [
             },
             {
                 year: '2014',
+                id: 2014,
                 list: [
                     {
                         participants: 'M. Taupin, L. Howald, D. Aoki, J.-P. Brison',
@@ -2048,6 +2057,7 @@ export const publications = [
             },
             {
                 year: '2013',
+                id: 2013,
                 list: [
                     {
                         participants: 'P. Torresani, M. J. Martínez-Pérez, S. Gasparinetti, J. Renard, G. Biasiol, L. Sorba, F. Giazotto, S. De Franceschi',
@@ -2263,6 +2273,7 @@ export const publications = [
             },
             {
                 year: '2012',
+                id: 2012,
                 list: [
                     {
                         participants: 'O.-P. Saira, Y. Yoon, T. Tanttu, M. Möttönen, D. V. Averin and J. P. Pekola',
@@ -2456,6 +2467,7 @@ export const publications = [
             },
             {
                 year: '2011',
+                id: 2011,
                 list: [
                     {
                         participants: 'S. Gasparinetti, P. Solinas, and J. P. Pekola',
@@ -2709,6 +2721,7 @@ export const publications = [
             },
             {
                 year: '2010',
+                id: 2010,
                 list: [
                     {
                         participants: 'J. P. Pekola, V. F. Maisi, S. Kafanov, N. Chekurov, A. Kemppinen, Yu. A. Pashkin, O.-P. Saira, M. Möttönen, and J. S. Tsai',
@@ -2854,6 +2867,7 @@ export const publications = [
             },
             {
                 year: '2009',
+                id: 2009,
                 list: [
                     {
                         participants: 'S. Kafanov, A. Kemppinen, Yu. A. Pashkin, M. Meschke, J. S. Tsai, and J.P. Pekola',
@@ -3033,6 +3047,7 @@ export const publications = [
             },
             {
                 year: '2008',
+                id: 2008,
                 list: [
                     {
                         participants: 'Jukka P. Pekola, Tommy Holmqvist, and Matthias Meschke',
@@ -3216,6 +3231,7 @@ export const publications = [
             },
             {
                 year: '2007',
+                id: 2007,
                 list: [
                     {
                         participants: 'Olli-Pentti Saira, Matthias Meschke, Francesco Giazotto, Alexander M. Savin, Mikko Möttönen, and Jukka P. Pekola',
@@ -3385,6 +3401,7 @@ export const publications = [
             },
             {
                 year: '2006',
+                id: 2006,
                 list: [
                     {
                         participants: 'M. Meschke, W. Guichard, and J.P. Pekola',
@@ -3564,6 +3581,7 @@ export const publications = [
             },
             {
                 year: '2005',
+                id: 2005,
                 list: [
                     {
                         participants: 'Juha Vartiainen',
@@ -3645,6 +3663,7 @@ export const publications = [
             },
             {
                 year: '2004',
+                id: 2004,
                 list: [
                     {
                         participants: 'A.O. Niskanen, J.M. Kivioja, H. Seppä, and J.P. Pekola',
@@ -3817,6 +3836,7 @@ export const publications = [
         years: [
             {
                 year: '2020',
+                id: 3020,
                 list: [
                     {
                         title: 'Klaara Viisanen',
@@ -3840,6 +3860,7 @@ export const publications = [
             },
             {
                 year: '2019',
+                id: 3019,
                 list: [
                     {
                         title: 'Jorden Senior',
@@ -3863,6 +3884,7 @@ export const publications = [
             },
             {
                 year: '2018',
+                id: 3018,
                 list: [
                     {
                         title: 'Robab Najafi Jabdaraghi',
@@ -3877,6 +3899,7 @@ export const publications = [
             },
             {
                 year: '2017',
+                id: 3017,
                 list: [
                     {
                         title: 'Anna Feshchenko',
@@ -3891,6 +3914,7 @@ export const publications = [
             },
             {
                 year: '2016',
+                id: 3016,
                 list: [
                     {
                         title: 'Jonne Koski',
@@ -3905,6 +3929,7 @@ export const publications = [
             },
             {
                 year: '2015',
+                id: 3015,
                 list: [
                     {
                         title: 'Timothé Faivre',
@@ -3919,6 +3944,7 @@ export const publications = [
             },
             {
                 year: '2014',
+                id: 3014,
                 list: [
                     {
                         title: 'Ville Maisi',
@@ -3942,6 +3968,7 @@ export const publications = [
             },
             {
                 year: '2013',
+                id: 3013,
                 list: [
                     {
                         title: 'Olli-Pentti Saira',
@@ -3956,6 +3983,7 @@ export const publications = [
             },
             {
                 year: '2012',
+                id: 3012,
                 list: [
                     {
                         title: 'Juha Muhonen',
@@ -3970,6 +3998,7 @@ export const publications = [
             },
             {
                 year: '2011',
+                id: 3011,
                 list: [
                     {
                         title: 'Joonas Peltonen',
@@ -3984,6 +4013,7 @@ export const publications = [
             },
             {
                 year: '2010',
+                id: 3010,
                 list: [
                     {
                         title: 'Tommy Holmqvist',
@@ -3998,6 +4028,7 @@ export const publications = [
             },
             {
                 year: '2009',
+                id: 3009,
                 list: [
                     {
                         title: 'Antti Kemppinen',
@@ -4021,6 +4052,7 @@ export const publications = [
             },
             {
                 year: '2005',
+                id: 3005,
                 list: [
                     {
                         title: 'Jani Kivioja',
@@ -4035,6 +4067,7 @@ export const publications = [
             },
             {
                 year: '2004',
+                id: 3004,
                 list: [
                     {
                         title: 'Antti Niskanen',

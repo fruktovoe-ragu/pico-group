@@ -6,8 +6,8 @@ import './Press.css';
 
 const cn = cnCreate('press');
 const Press: React.FC = () => {
-  const renderYear = (year: number, arr: IRelease[], i: number) => (
-    <div className={cn('year')} key={i * year}>
+  const renderYear = (year: string, arr: IRelease[], categoryId: number) => (
+    <div className={cn('year')} key={categoryId}>
       <h3 className={cn('title')}>{year}</h3>
       <div className={cn('releases')}>
         {arr.map(({ date, text }: IRelease, i: number) => (
@@ -20,14 +20,16 @@ const Press: React.FC = () => {
     </div>
   );
 
-  const chipsData = press.map(({ year, releases }, i) => ({
+  const chipsData = press.map(({ year, id, releases }) => ({
     title: year,
-    content: renderYear(year, releases, i)
+    categoryId: id,
+    content: renderYear(year, releases, id)
   }));
 
   const chipsDataWithAllYears = [{
     title: 'All years',
-    content: press.map(({ year, releases }, i) => renderYear(year, releases, i))
+    categoryId: -1,
+    content: press.map(({ year, id, releases }) => renderYear(year, releases, id))
   }, ...chipsData];
 
   return (

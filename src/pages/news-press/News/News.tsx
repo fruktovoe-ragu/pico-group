@@ -10,8 +10,8 @@ const cn = cnCreate('news');
 const News: React.FC = () => {
   const { pathname } = useLocation();
 
-  const renderYear = (year: number, arr: INews[], i: number) => (
-    <div className={cn('year')} key={i * year}>
+  const renderYear = (year: string, arr: INews[], categoryId: number) => (
+    <div className={cn('year')} key={categoryId}>
       <h3 className={cn('title')}>{year}</h3>
       <div className={cn('releases')}>
         {arr.map(({ date, id, title }: INews, i: number) => (
@@ -27,19 +27,24 @@ const News: React.FC = () => {
     </div>
   );
 
-  const chipsData = newsData.map(({ year, news }, i) => ({
+  const chipsData = newsData.map(({ year, news, id }) => ({
     title: year,
-    content: renderYear(year, news, i)
+    categoryId: id,
+    content: renderYear(year, news, id),
   }));
 
   const chipsDataWithAllYears = [{
     title: 'All years',
-    content: newsData.map(({ year, news }, i) => renderYear(year, news, i))
+    categoryId: -1,
+    content: newsData.map(({ year, news, id }) => renderYear(year, news, id)),
   }, ...chipsData];
 
   return (
     <div className={cn()}>
-      <ChipsPanel data={chipsDataWithAllYears} />
+      <ChipsPanel
+        data={chipsDataWithAllYears}
+        itemsMobileDisplayNumber={chipsDataWithAllYears.length + 1}
+      />
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import React from 'react';
 
 export interface IPress {
-    year: number,
+    year: string,
+    id: number,
     releases: IRelease[],
 };
 
@@ -12,7 +13,8 @@ export interface IRelease {
 
 export const press = [
     {
-        year: 2016,
+        year: '2016',
+        id: 4016,
         releases: [
             {
                 date: '11 May 2016',
@@ -49,7 +51,8 @@ export const press = [
         ],
     },
     {
-        year: 2015,
+        year: '2015',
+        id: 4015,
         releases: [
             {
                 date: '30 Dec 2015',
@@ -70,7 +73,8 @@ export const press = [
         ],
     },
     {
-        year: 2012,
+        year: '2012',
+        id: 4012,
         releases: [
             {
                 date: '28 March 2012',
@@ -83,7 +87,8 @@ export const press = [
         ],
     },
     {
-        year: 2008,
+        year: '2008',
+        id: 4008,
         releases: [
             {
                 date: '30 December 2008',
@@ -112,7 +117,8 @@ export const press = [
         ],
     },
     {
-        year: 2007,
+        year: '2007',
+        id: 4007,
         releases: [
             {
                 date: '6 August 2007',

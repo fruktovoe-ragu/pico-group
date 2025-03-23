@@ -4,6 +4,8 @@
     }
 
     &__wrap {
+        display: flex;
+        flex-wrap: wrap;
         margin-bottom: -10px;
         margin-left: -10px;
     }

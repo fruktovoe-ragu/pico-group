@@ -1,37 +1,97 @@
-.chip {
-    background-color: transparent;
-    border: 1px solid var(--dark60);
-    border-radius: 100px;
-    box-sizing: border-box;
-    color: var(--light);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    letter-spacing: -0.5px;
-    outline: none;
-    overflow: hidden;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+$b: .chip;
 
-    @media (--mobileSM) {
-        height: 35px;
-        padding: 0 10px;
+$(b) {
+    position: relative;
+
+    &__inner {
+        background-color: transparent;
+        border: 1px solid var(--dark60);
+        border-radius: 100px;
+        box-sizing: border-box;
+        color: var(--light);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        letter-spacing: -0.5px;
+        outline: none;
+        overflow: hidden;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+
+        @media (--mobileSM) {
+            height: 35px;
+            padding: 0 10px;
+        }
+
+        @media (--mobileBU) {
+            height: 40px;
+            padding: 0 20px;
+        }
+
+        @media (--desktop) {
+            &:hover {
+                border: 1px solid var(--light);
+            }
+        }
     }
 
-    @media (--mobileBU) {
-        height: 40px;
-        padding: 0 20px;
-    }
+    &__icon {
+        width: 16px;
+        height: 16px;
 
-    &:hover {
-        border: 1px solid var(--light);
+        transform: rotate(0);
+        transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+
+        path {
+            fill: var(--light);
+        }
     }
 
     &_chosen {
-        background-color: var(--light);
+        $(b)__inner {
+            background-color: var(--light);
+            border: 1px solid var(--light);
+            color: var(--dark80);
+            cursor: default;
+        }
+
+        $(b)__icon path {
+            fill: var(--dark80);
+        }
+    }
+
+    &__select {
+        background: var(--dark80);
         border: 1px solid var(--light);
-        color: var(--dark80);
-        cursor: default;
+        border-radius: 15px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 2px;
+        max-height: 260px;
+        overflow-y: scroll;
+        padding: 15px 0;
+    }
+
+    &__select-item {
+        padding: 10px 25px;
+
+        &_chosen {
+            background: var(--dark60);
+        }
+    }
+
+    &_select-opened {
+        $(b)__icon {
+            transform: rotate(180deg);
+        }
+
+        $(b)__inner {
+            border: 1px solid var(--light);
+        }
     }
 }
